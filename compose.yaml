@@ -1,0 +1,9 @@
+services:
+  postgresql: 
+    image: docker.io/bitnami/postgresql:latest
+    ports:
+      - '5432:5432'
+    environment:
+    - POSTGRESQL_USERNAME=raijin
+    - POSTGRESQL_PASSWORD=wellhub
+    - POSTGRESQL_DATABASE=wellhub
