@@ -38,19 +38,6 @@ To get started with learning SOLID principles using TypeScript, Node.js, Fastify
    ```
 
 2. **Setup Docker**
-   Create a `docker-compose.yml` file for setting up PostgreSQL:
-   ```yaml
-   version: '3'
-   services:
-     db:
-       image: postgres:latest
-       environment:
-         POSTGRES_USER: user
-         POSTGRES_PASSWORD: password
-         POSTGRES_DB: solid_db
-       ports:
-         - "5432:5432"
-   ```
    Run the Docker container:
    ```bash
    docker-compose up -d
