@@ -23,7 +23,7 @@ The SOLID principles are five design principles that help developers create more
 To get started with learning SOLID principles using TypeScript, Node.js, Fastify, Docker, PostgreSQL, and Prisma, follow these steps:
 
 ### Requirements
-- Node.js (v14+)
+- Node.js (v24+)
 - Docker
 - PostgreSQL
 - Docker Compose
@@ -73,9 +73,19 @@ To get started with learning SOLID principles using TypeScript, Node.js, Fastify
 5. **Run the Application**
    Start your Fastify server:
    ```bash
-   npx ts-node src/app.ts
+   npm run dev
    ```
-
+   For development environment
+   
+   ```bash
+   npm run build
+   ```
+   To build the project
+   
+   ```bash
+   npm run start
+   ```
+   To run the production code
 ## Conclusion
 In this guide, we've introduced the SOLID principles and outlined steps to set up a development environment that leverages TypeScript, Node.js, Fastify, and PostgreSQL using Docker. Apply these principles to create scalable and maintainable applications!  
 
