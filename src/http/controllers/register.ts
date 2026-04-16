@@ -17,7 +17,7 @@ export async function register(request: FastifyRequest, reply: FastifyReply) {
       email, 
       password
     })
-  } catch (error: unknown) {
+  } catch (error) {
     return reply.status(409).send()
   }
 
