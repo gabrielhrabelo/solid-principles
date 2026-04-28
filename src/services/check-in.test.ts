@@ -9,20 +9,20 @@ let checkInsRepository: InMemoryCheckinsRepository
 let gymsRepository: InMemoryGymsRepository
 let sut: CheckInService
 
-describe('Get User Profile Service', () => {
+describe('Check in Service', () => {
 
-  beforeEach(() => {
+  beforeEach(async () => {
     checkInsRepository = new InMemoryCheckinsRepository()
     gymsRepository = new InMemoryGymsRepository()
     sut = new CheckInService(checkInsRepository, gymsRepository)
 
-     gymsRepository.items.push({
+    await gymsRepository.create({
       id: 'gym-01',
-      description: '',
       title: 'acad braba',
+      description: '',
       phone: '',
-      latitude: new Decimal(0),
-      longitude: new Decimal(0),
+      latitude: -16.6782504,
+      longitude: -49.2334693,
     })
 
     vi.useFakeTimers()
@@ -37,8 +37,8 @@ describe('Get User Profile Service', () => {
     const { checkIn } =  await sut.execute({
       gymId: 'gym-01',
       userId: 'user-01',
-      userLatitude: 0,
-      userLongitude: 0
+      userLatitude: -16.6782504,
+      userLongitude: -49.2334693
     })
     expect(checkIn.id).toEqual(expect.any(String))
   })
@@ -48,8 +48,8 @@ describe('Get User Profile Service', () => {
     await sut.execute({
       gymId: 'gym-01',
       userId: 'user-01',
-       userLatitude: 0,
-      userLongitude: 0
+      userLatitude: -16.6782504,
+      userLongitude: -49.2334693
     })
 
     vi.setSystemTime(new Date(2025, 3, 28, 8, 0, 0))
@@ -57,8 +57,8 @@ describe('Get User Profile Service', () => {
     const { checkIn } = await sut.execute({
       gymId: 'gym-01',
       userId: 'user-01',
-      userLatitude: 0,
-      userLongitude: 0
+      userLatitude: -16.6782504,
+      userLongitude: -49.2334693
     })
     expect(checkIn.id).toEqual(expect.any(String))
   })
