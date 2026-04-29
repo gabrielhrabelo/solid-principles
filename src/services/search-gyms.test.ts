@@ -11,7 +11,7 @@ describe('Search gyms by query service', () => {
     sut = new searchGymsService(gymsRepository)
   })
 
-  it('should be able to search gyms around', async () => {
+  it('should be able to search gyms', async () => {
     await gymsRepository.create({
       title: 'acad da boa',
       description: null,
