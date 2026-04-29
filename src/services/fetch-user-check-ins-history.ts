@@ -1,5 +1,5 @@
-import type { CheckInsRepository } from "@/repositories/prisma/check-ins-repository"
-import type { Checkin } from "../../generated/prisma/client"
+import type { CheckInsRepository } from '@/repositories/prisma/check-ins-repository'
+import type { Checkin } from '../../generated/prisma/client'
 
 interface FetchUserCheckInsHistoryServiceRequest {
   userId: string
@@ -11,13 +11,16 @@ interface FetchUserCheckInsHistoryServiceResponse {
 }
 
 export class FetchUserCheckInsService {
-  constructor (private checkInsRepository: CheckInsRepository){}
+  constructor(private checkInsRepository: CheckInsRepository) {}
 
   async execute({
     userId,
-    page
+    page,
   }: FetchUserCheckInsHistoryServiceRequest): Promise<FetchUserCheckInsHistoryServiceResponse> {
-    const checkIns = await this.checkInsRepository.findManyByUserId(userId, page)
+    const checkIns = await this.checkInsRepository.findManyByUserId(
+      userId,
+      page,
+    )
 
     return { checkIns }
   }

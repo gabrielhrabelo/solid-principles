@@ -1,5 +1,5 @@
-import type { Prisma } from "@/../generated/prisma/browser"
-import type { User } from "../../../generated/prisma/client"
+import type { Prisma } from '@/../generated/prisma/browser'
+import type { User } from '../../../generated/prisma/client'
 
 export interface UsersRepository {
   findById(id: string): Promise<User | null>

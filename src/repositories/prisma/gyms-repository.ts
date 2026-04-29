@@ -1,5 +1,5 @@
-import type { Prisma } from "../../../generated/prisma/browser";
-import type { Gym } from "../../../generated/prisma/client";
+import type { Prisma } from '../../../generated/prisma/browser'
+import type { Gym } from '../../../generated/prisma/client'
 
 export interface GymsRepository {
   findById(gymId: string): Promise<Gym | null>

@@ -1,6 +1,6 @@
-import { InMemoryGymsRepository } from "@/repositories/in-memory/in-memory-gym-repository";
-import { CreateGymService } from "./create-gym";
-import { describe, expect, it, beforeEach } from "vitest";
+import { InMemoryGymsRepository } from '@/repositories/in-memory/in-memory-gym-repository'
+import { CreateGymService } from './create-gym'
+import { describe, expect, it, beforeEach } from 'vitest'
 
 let gymsRepository: InMemoryGymsRepository
 let sut: CreateGymService
@@ -21,7 +21,5 @@ describe('Create gym service', () => {
     })
 
     expect(gym.id).toEqual(expect.any(String))
-
-    })
-  }
-)
+  })
+})

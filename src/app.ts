@@ -9,12 +9,14 @@ app.register(appRoutes)
 
 app.setErrorHandler((error, _, reply) => {
   if (error instanceof ZodError) {
-    return reply.status(400).send({ message: 'Validation error', issues: z.treeifyError(error) })
+    return reply
+      .status(400)
+      .send({ message: 'Validation error', issues: z.treeifyError(error) })
   }
   if (env.NODE_ENV !== 'production') {
     console.error(error)
   } else {
     // TODO: Here we should log to an external tool like Datadog / NewRelic / Sentry
   }
-  return reply.status(500).send({ message: "internal server error" })
+  return reply.status(500).send({ message: 'internal server error' })
 })
