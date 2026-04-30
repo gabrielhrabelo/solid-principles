@@ -8,4 +8,6 @@ app
   })
   .then(() => {
     console.log('HTTP Server Running 🚀')
+    console.log('Server running at http://localhost:3333')
+    console.log('📚 Reach docs at http://localhost:3333/docs')
   })
