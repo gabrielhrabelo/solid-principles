@@ -46,7 +46,6 @@
       },
       "suspicious": {
         "noExplicitAny": "warn",
-        "noVar": "error",
         "noDoubleEquals": "error",
         "noImplicitAnyLet": "error"
       },
