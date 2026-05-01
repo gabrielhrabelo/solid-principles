@@ -19,10 +19,6 @@ export class AuthenticateService {
     email,
     password,
   }: AuthenticateServiceRequest): Promise<AuthenticateServiceResponse> {
-    // auth
-    // search for the user in the database
-    // verify if password matches
-
     const user = await this.usersRepository.findByEmail(email)
 
     if (!user) {
