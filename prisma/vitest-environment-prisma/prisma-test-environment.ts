@@ -24,14 +24,20 @@ export default (<Environment>{
 
     console.log(databaseUrl)
 
-    execSync('pnpx prisma db push')
-
     process.env.DATABASE_URL = databaseUrl
+
+    execSync('pnpx prisma db push', {
+      env: {
+        ...process.env,
+        DATABASE_URL: databaseUrl,
+      },
+    })
+
     return {
       async teardown() {
         // erase database
         await prisma.$executeRawUnsafe(
-          'DROP SCHEMA IF EXISTS "${schema}" CASCADE',
+          `DROP SCHEMA IF EXISTS "${schema}" CASCADE`,
         )
         await prisma.$disconnect()
       },

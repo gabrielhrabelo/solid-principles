@@ -1,27 +1,29 @@
-import { defineConfig } from "vitest/config";
-import tsconfigPaths from "vite-tsconfig-paths";
+import tsconfigPaths from 'vite-tsconfig-paths'
+import { defineConfig } from 'vitest/config'
 
 export default defineConfig({
   plugins: [tsconfigPaths()],
   test: {
-    dir: "src",
+    dir: 'src',
     projects: [
       {
         extends: true,
         test: {
-          name: "unit",
-          dir: "src/services",
+          name: 'unit',
+          dir: 'src/services',
         },
       },
       {
         extends: true,
         test: {
-          name: "e2e",
-          dir: "src/http/controllers",
+          name: 'e2e',
+          dir: 'src/http/controllers',
           environment:
-            "./prisma/vitest-environment-prisma/prisma-test-environment.ts",
+            './prisma/vitest-environment-prisma/prisma-test-environment.ts',
+          isolate: true,
+          fileParallelism: false,
         },
       },
     ],
   },
-});
+})

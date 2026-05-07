@@ -1,11 +1,12 @@
-import { appRoutes } from './http/routes'
-import z, { ZodError } from 'zod'
-import { env } from './env'
-import { fastifySwagger } from '@fastify/swagger'
 import { fastifyCors } from '@fastify/cors'
+import { fastifyJwt } from '@fastify/jwt'
+import { fastifySwagger } from '@fastify/swagger'
 import ScalarApiReference from '@scalar/fastify-api-reference'
 import { fastify } from 'fastify'
-import { fastifyJwt } from '@fastify/jwt'
+import z, { ZodError } from 'zod'
+import { env } from './env'
+import { gymRoutes } from './http/controllers/gyms/routes'
+import { usersRoutes } from './http/controllers/users/routes'
 
 export const app = fastify()
 
@@ -33,7 +34,8 @@ app.register(fastifyJwt, {
   secret: env.JWT_SECRET,
 })
 
-app.register(appRoutes)
+app.register(usersRoutes)
+app.register(gymRoutes)
 
 app.register(fastifyCors, {
   origin: true,
