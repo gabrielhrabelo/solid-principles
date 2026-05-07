@@ -30,4 +30,6 @@ export async function createCheckIn(
     userLatitude: latitude,
     userLongitude: longitude,
   })
+
+  return reply.status(201).send()
 }
