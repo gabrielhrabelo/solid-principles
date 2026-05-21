@@ -16,5 +16,7 @@ jobs:
         with:
           node-version: 24
           cache: "pnpm"
+      - name: generate prisma cliente
+        run: pnpx prisma generate
       - run: pnpm ci
       - run: pnpm test
