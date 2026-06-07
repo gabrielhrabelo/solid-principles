@@ -6,7 +6,7 @@ A RESTful API built as a hands-on study of **SOLID principles** applied to a rea
 
 ## Purpose
 
-This project was built with one main goal: **learning how to apply SOLID principles in a real TypeScript/Node.js codebase**, rather than just understanding them in theory. Every architectural decision — from repository interfaces to service factories — was made deliberately to practice one or more of the five principles.
+This project was built with one main goal: learning how to apply SOLID principles in a real TypeScript/Node.js codebase, rather than just understanding them in theory. Every architectural decision, from repository interfaces to service factories, was made deliberately to practice one or more of the five principles.
 
 ---
 
